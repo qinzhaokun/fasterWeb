@@ -1,4 +1,4 @@
-package com.qinzhaokun;
+package com.fasterweb;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

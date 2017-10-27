@@ -1,4 +1,4 @@
-package com.qinzhaokun.controller;
+package com.fasterweb.controller;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Controller;

@@ -1,4 +1,4 @@
-package com.qinzhaokun;
+package com.fasterweb;
 
 /**
  * Hello world!
