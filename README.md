@@ -14,4 +14,6 @@ fasterWeb项目是一个基于SSM（Spring + Spring MVC + Mybatis）构建的Jav
 
 4. 前后端支持使用JSON字符串进行数据交互，1) 接收JSON字符串，使用`@RequestBody`注解对参数进行注解，可进行自动装箱，映射成对应的类；2) 后台返回JSON字符串，可在`Controller`的方法上加上`@ResponseBody`即可将对象自动转换成JSON格式的字符串
 
-5. 数据库连接采用`c3p0`连接插件。
+5. 支持文件的上传功能和下载功能，需要下载的文件默认放在了`webapp/static/`目录下，使用`download/filename`url发送`GET`请求下载。
+
+6. 数据库连接采用`c3p0`连接插件。
