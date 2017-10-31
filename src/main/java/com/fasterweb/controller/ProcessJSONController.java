@@ -1,7 +1,11 @@
 package com.fasterweb.controller;
 
+
 import com.fasterweb.model.ResponseData;
+import com.fasterweb.model.User;
 import com.fasterweb.model.UserTest;
+import com.fasterweb.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
@@ -12,9 +16,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class ProcessJSONController {
+
+    @Autowired
+    private UserService userService;
     /**
      *
      * @return
@@ -56,9 +64,35 @@ public class ProcessJSONController {
         System.out.println(userInfo.getPassword());
         System.out.println(userInfo.getUserName());
 
+        User user = new User();
+        user.setUserName(userInfo.getUserName());
+        user.setPassword(userInfo.getPassword());
+
+        userService.addUser(user);
+
         ResponseData re = new ResponseData();
         re.setResult("ok");
         re.setReason("ok");
 
         return re;
-    }}
+    }
+
+    /**
+     *
+     * @param map
+     * @return
+     * @Description post JSON字符串，并自动装箱成HashMap对象
+     */
+
+    @RequestMapping("setuser2")
+    @ResponseBody
+    public ResponseData getUserWithMap(@RequestBody Map map){
+        System.out.println(map.get("userName"));
+        System.out.println(map.get("password"));
+        ResponseData re = new ResponseData();
+        re.setResult("ok");
+        re.setReason("ok");
+        return re;
+    }
+
+}
