@@ -74,6 +74,10 @@
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
 
+    <!-- 使用ehcache缓存 -->
+    <bean id="ehCacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+        <property name="configLocation" value="classpath:config/spring/ehcache.xml" />
+    </bean>
 
     <!-- 配置当出现Exception、RuntimeException、Exception时采用对应的事务操作 -->
     <tx:advice id="userTxAdvice" transaction-manager="transactionManager">

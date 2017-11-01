@@ -2,10 +2,10 @@ package com.fasterweb.service;
 
 import com.fasterweb.dao.UserMapper;
 import com.fasterweb.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service("userSeivice")
 public class UserService {
@@ -27,5 +27,9 @@ public class UserService {
 
     public void deleteById(Integer id){
         userMapper.deleteById(id);
+    }
+
+    public List<User> getAllUser(){
+        return userMapper.getAllUser();
     }
 }
