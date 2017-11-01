@@ -17,3 +17,5 @@ fasterWeb项目是一个基于SSM（Spring + Spring MVC + Mybatis）构建的Jav
 5. 支持文件的上传功能和下载功能，需要下载的文件默认放在了`webapp/static/`目录下，使用`download/filename`url发送`GET`请求下载。
 
 6. 数据库连接采用`c3p0`连接插件。
+
+7. 配置集成了ehcache来做缓存。
